@@ -1,0 +1,66 @@
+
+
+
+
+<h1>HttpClient for Sending Http Request Api and return data table(test)-- Guo Hua Chen, edchenstudio@hotmail.com </h1>
+  
+<div>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+
+
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="albumId">
+    <th mat-header-cell *matHeaderCellDef> AlbumId. </th>
+    <td mat-cell *matCellDef="let post"> {{post.albumId }} </td>
+  </ng-container>
+
+   <!-- Name Column -->
+  <ng-container matColumnDef="space1">
+    <th mat-header-cell *matHeaderCellDef width="20px"> </th>
+    <td mat-cell *matCellDef="let post" width="20px"> </td>
+  </ng-container>
+
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let post"> {{post.id}} </td>
+  </ng-container>
+  <ng-container matColumnDef="space2">
+    <th mat-header-cell *matHeaderCellDef width="20px"> </th>
+    <td mat-cell *matCellDef="let post" width="20px"> </td>
+  </ng-container>
+  <!-- Weight Column -->
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Title </th>
+    <td mat-cell *matCellDef="let post"> {{post.title}} </td>
+  </ng-container>
+  <ng-container matColumnDef="space3">
+    <th mat-header-cell *matHeaderCellDef width="20px"> </th>
+    <td mat-cell *matCellDef="let post" width="20px"> </td>
+  </ng-container>
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="url">
+    <th mat-header-cell *matHeaderCellDef> Url </th>
+    <td mat-cell *matCellDef="let post"> {{post.url }} </td>
+  </ng-container>
+    <ng-container matColumnDef="space4">
+    <th mat-header-cell *matHeaderCellDef width="20px"> </th>
+    <td mat-cell *matCellDef="let post" width="20px"> </td>
+  </ng-container>
+ <!-- Symbol Column -->
+  <ng-container matColumnDef="thumbnailUrl">
+    <th mat-header-cell *matHeaderCellDef> ThumbnailUrl </th>
+    <td mat-cell *matCellDef="let post"> {{post.thumbnailUrl}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</mat-table>
+
+<mat-paginator [length]="dataSource.data.lenght" #paginator [pageSize]="10" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page">
+</mat-paginator>
+</div>
+
+<router-outlet></router-outlet>
